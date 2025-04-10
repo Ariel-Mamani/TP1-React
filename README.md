@@ -1,12 +1,13 @@
-# React + Vite
+# Trabajo Práctico: REACT
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## integrantes: 
+- **Ariel Mamani** FAI-3607
+- **Diego Marchandon** FAI-4886
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Descripción del proyecto: 
+Construir en React una aplicación que funcione como gestor personal de películas y series.
+La aplicación debe permitir al usuario agregar nuevas películas o series, marcarlas como 
+vistas, editarlas y eliminarlas (con confirmación). 
+Cada ítem debe tener título, director, año, género (usar un select para este campo), rating y 
+tipo (película o serie). 
+La aplicación debe mostrar dos listas: una con contenido por ver y otra con contenido visto.
