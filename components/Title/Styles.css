@@ -1,0 +1,12 @@
+/* index.css o styles.css */
+.title {
+    font-family: 'Arial', sans-serif; /* Fuente elegante y legible */
+    font-size: 3rem; /* Tamaño grande para destacar */
+    color: #3498db; /* Azul vibrante */
+    text-align: center; /* Centrado en la página */
+    text-transform: uppercase; /* Todo en mayúsculas */
+    letter-spacing: 2px; /* Espaciado entre letras */
+    margin-top: 20px; /* Espaciado hacia arriba */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Sombra para efecto visual */
+  }
+  
