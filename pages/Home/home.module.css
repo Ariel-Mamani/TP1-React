@@ -1,0 +1,25 @@
+/* Estilo para el contenedor principal */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Ocupa toda la ventana */
+    background-color: #f0f8ff; /* Azul claro */
+    font-family: 'Arial', sans-serif;
+}
+
+/* Título principal */
+.title {
+    font-size: 2.5rem; /* Tamaño del texto */
+    color: #2c3e50; /* Azul oscuro */
+    margin-bottom: 1rem; /* Espaciado inferior */
+}
+
+/* Párrafo */
+.paragraph {
+    font-size: 1.2rem; /* Tamaño del texto */
+    color: #34495e; /* Gris azulado */
+    text-align: center; /* Centrado */
+    line-height: 1.6; /* Altura de línea */
+}
