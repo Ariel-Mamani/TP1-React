@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useState } from 'react';
+import reactLogo from './assets/react.svg';
+import viteLogo from '/vite.svg';
 import Home from '../pages/Home/Home';
 import Peliculas from '../pages/Peliculas/Peliculas';
 import Series from '../pages/Series/Series';
@@ -30,10 +30,17 @@ function App() {
         <Route path="*" element={<NotFound />} />
         */}
       </Routes>
-      <Home />
       <Footer />
     </Router>
   )
 }
 
 export default App
+
+/* usar una ternaria para indicar que si el map no se pudo hacer, que se retorne, por ejemplo, un nodo con un mensaje de ERROR */
+
+/* export default App/export App
+la diferencia está en que default se utiliza cuando tenemos un solo export en el archivo. 
+Cuando tenemos multiples export, no usamos default. 
+No es buena práctica tener múltiples export en un mismo archivo. 
+*/

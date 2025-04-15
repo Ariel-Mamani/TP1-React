@@ -15,3 +15,6 @@ function Movie(){
         </div>
     );
 }
+/* .find()
+.filter()
+.reduce() */
