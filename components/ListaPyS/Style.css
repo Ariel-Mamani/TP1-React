@@ -1,0 +1,14 @@
+.pelicula-lista-contenedor{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 15px;
+    gap: 10px;
+}
+h2{
+    color: #1b1b32;
+    font-size: 32px;
+    font-family: Roboto, sans-serif;
+    text-align:  center;
+    margin: 20px 0;
+}

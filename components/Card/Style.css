@@ -1,0 +1,62 @@
+
+.contenedor-peliculas {
+    width: 300px; 
+    min-height: 120px;
+    background-color: #1b1b32;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-between;
+    align-items: flex-start;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.contenedor-peliculas.vista {
+    background-color: #1b1b32;
+}
+
+.contenedor-info {
+    flex: 1;
+    margin-bottom: 10px;
+}
+
+.pelicula-titulo {
+    margin: 0 0 5px 0;
+    color: #fdfd6c;
+    font-size: 1.2rem;
+}
+
+.pelicula-detalle {
+    margin: 3px 5px;
+    color: #ffffff;
+    font-size: 0.9rem;
+
+}
+
+.iconos {
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+}
+
+.icono-visto, .icono-Novisto {
+    cursor: pointer;
+    margin-left: 10px;
+    color: #cccbcb;
+}
+
+.icono-visto:hover {
+    color: #49df51;
+}
+
+.icono-Novisto:hover {
+    color: #3d84d5;
+}
+
+/* Pelicula o Serie vista */
+.contenedor-peliculas.vista{
+    background-color: #5a01a7;
+    text-decoration: line-through;
+}

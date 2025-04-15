@@ -1,13 +1,14 @@
 /* Contenedor principal del footer */
 .footer {
+    position: fixed;
     background-color: #2c3e50; /* Azul oscuro */
     color: white; /* Texto en blanco */
     padding: 20px 0; /* Espaciado superior e inferior */
     text-align: center; /* Centra el contenido */
     font-family: 'Arial', sans-serif; /* Fuente */
-    position: relative;
     bottom: 0;
     width: 100%;
+    z-index: 1000;
 }
 
 /* Estilo para los enlaces */
