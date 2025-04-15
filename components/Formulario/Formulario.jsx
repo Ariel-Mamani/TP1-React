@@ -1,17 +1,19 @@
 import './Style.css';
 import Button from '../../components/Button/Button.jsx';
-import React,{useState} from 'react';
-import {v4 as uuidv4} from 'uuid' // Para generar ids unicos
+import React, { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid' // Para generar ids unicos
 
-function Form(props){
+function Form(props) {
 
+    const [imageBase64, setImageBase64] = useState(''); // Estado para la imagen en Base64
     const [formulario, setFormulario] = useState({
         // estado inicial del formulario 
         titulo: '',
         director: '',
         año: '',
         genero: '',
-        tipo: ''
+        tipo: '',
+        imagen: ''
     });
 
     // funcion que actualiza el estado cuando escribes en los inputs
@@ -21,6 +23,17 @@ function Form(props){
             ...formulario,
             [name]: value // actualiza solo el campo que cambio
         });
+    };
+
+    const handleImageChange = (event) => {
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onloadend = () => {
+                setImageBase64(reader.result); // Guardar la imagen como Base64
+            };
+            reader.readAsDataURL(file); // Convertir la imagen a Base64
+        }
     };
 
     // funcion que se ejecuta al enviar el formulario
@@ -34,7 +47,8 @@ function Form(props){
             año: formulario.año,
             genero: formulario.genero,
             tipo: formulario.tipo,
-            visto: false // por defecto no esta vista
+            visto: false, // por defecto no esta vista
+            image: imageBase64
         };
         // se limpia formulario despues de enviar
         props.onSubmit(peliculaNueva);
@@ -46,12 +60,12 @@ function Form(props){
             tipo: ''
         });
     };
-    return(
+    return (
         <form className="formulario" onSubmit={manejarEnvio}>
-            <input type="text" name="titulo"placeholder="Título" className="inputs" onChange={manejarCambio}value={formulario.titulo}/>
-            <input type="text" name="director"placeholder="Director" className="inputs" onChange={manejarCambio}value={formulario.director}/>
-            <input type="number" name="año"placeholder="Año" className="inputs"min='1900'onChange={manejarCambio}value={formulario.año}/>
-            <select 
+            <input type="text" name="titulo" placeholder="Título" className="inputs" onChange={manejarCambio} value={formulario.titulo} />
+            <input type="text" name="director" placeholder="Director" className="inputs" onChange={manejarCambio} value={formulario.director} />
+            <input type="number" name="año" placeholder="Año" className="inputs" min='1900' onChange={manejarCambio} value={formulario.año} />
+            <select
                 name="genero"
                 onChange={manejarCambio}
                 value={formulario.genero}>
@@ -61,7 +75,7 @@ function Form(props){
                 <option value="Drama">Drama</option>
                 <option value="Comedia">Comedia</option>
             </select>
-            <select 
+            <select
                 name="tipo"
                 onChange={manejarCambio}
                 value={formulario.tipo}>
@@ -69,7 +83,8 @@ function Form(props){
                 <option value="Película">Película</option>
                 <option value="Serie">Serie</option>
             </select>
-            <Button text='Agregar'/>
+            <input type="file" accept="image/*" onChange={handleImageChange} className="inputs" />
+            <Button text='Agregar' />
         </form>
     )
 }

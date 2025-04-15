@@ -4,7 +4,7 @@ import { Eye } from "lucide-react"; // Ícono para "Visto"
 import { Bookmark } from "lucide-react"; // Ícono para "Por ver"
 
 
-function Card({ id, titulo, director, año, genero, tipo, visto, peliculaVista, peliculaPorVer }) {
+function Card({ id, titulo, director, año, genero, tipo, visto, peliculaVista, peliculaPorVer, image }) {
     return (
         <div className={visto ? "contenedor-peliculas vista" : "contenedor-peliculas"}>
             <div className="contenedor-info">
@@ -13,6 +13,7 @@ function Card({ id, titulo, director, año, genero, tipo, visto, peliculaVista, 
                 <p className="pelicula-detalle"><strong>Año:</strong> {año}</p>
                 <p className="pelicula-detalle"><strong>Género:</strong> {genero}</p>
                 <p className="pelicula-detalle"><strong>Tipo:</strong> {tipo}</p>
+                <img src={image} />
             </div>
             <div className="iconos">
                 <div className="icono-Novisto" onClick={() => peliculaPorVer(id)}>

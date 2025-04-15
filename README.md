@@ -3,6 +3,7 @@
 ## integrantes: 
 - **Ariel Mamani** FAI-3607
 - **Diego Marchandon** FAI-4886
+- **Ignacio Araya** FAI-836
 
 ## Descripción del proyecto: 
 Construir en React una aplicación que funcione como gestor personal de películas y series.

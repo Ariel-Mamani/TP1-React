@@ -1,6 +1,6 @@
 import './Styles.css';
 
-const Input =({onChange,value})=>{
+const Input =({onChange,value, placeholder})=>{
     const cuandoCambia = (evento)=>{
         onChange(evento.target.value)
     }
@@ -10,6 +10,6 @@ const Input =({onChange,value})=>{
             onChange('');
         }
     };
-    return <input value={value} onChange={cuandoCambia} onClick={cuandoEscribe}/>;    
+    return <input value={value} onChange={cuandoCambia} onClick={cuandoEscribe} placeholder={placeholder}/>;    
 }
 export default Input;
