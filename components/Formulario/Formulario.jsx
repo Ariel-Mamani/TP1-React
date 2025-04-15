@@ -16,12 +16,15 @@ function Form(props) {
         imagen: ''
     });
 
-    // funcion que actualiza el estado cuando escribes en los inputs
-    const manejarCambio = e => {
-        const { name, value } = e.target;
+     // funcion que actualiza el estado cuando se escribe en los inputs
+    const manejarCambio = evento => {
+        const elementoActual = evento.target;
+        const campo = elementoActual.name;  
+        const nuevoValor = elementoActual.value;  
+
         setFormulario({
             ...formulario,
-            [name]: value // actualiza solo el campo que cambio
+            [campo]: nuevoValor
         });
     };
 

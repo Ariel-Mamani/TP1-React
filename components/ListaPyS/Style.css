@@ -5,6 +5,33 @@
     margin-top: 15px;
     gap: 10px;
 }
+/* Lista de peliculas y series */
+.peliculasLista{
+    width: 100%;
+    min-height: 500px;
+    background-color: #d1cfcf; 
+    padding: 25px;
+    margin: 10px;
+    justify-content: center;
+    border-radius: 10px;
+}  
+.cardGrid {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center; 
+}
+
+.listaSection {
+    
+    min-width: 500px;
+    background: #7066de;
+    padding: 15px;
+    margin: 10px 15px;
+    border-radius: 8px;
+}
+
 h2{
     color: #1b1b32;
     font-size: 32px;

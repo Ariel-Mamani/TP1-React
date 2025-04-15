@@ -1,10 +1,10 @@
 import React from "react";
 import './Style.css';
-import { Eye } from "lucide-react"; // Ícono para "Visto"
-import { Bookmark } from "lucide-react"; // Ícono para "Por ver"
+import { Eye } from "lucide-react"; // icono para "Visto"
+import { Bookmark } from "lucide-react"; // icono para "Por ver"
+import { Trash2 } from "lucide-react"; // icono para "Por ver"
 
-
-function Card({ id, titulo, director, año, genero, tipo, visto, peliculaVista, peliculaPorVer, image }) {
+function Card({ id, titulo, director, año, genero, tipo, visto, peliculaVista, peliculaPorVer, eliminarPelicula, image }) {
     return (
         <div className={visto ? "contenedor-peliculas vista" : "contenedor-peliculas"}>
             <div className="contenedor-info">
@@ -22,8 +22,10 @@ function Card({ id, titulo, director, año, genero, tipo, visto, peliculaVista, 
                 <div className="icono-visto" onClick={() => peliculaVista(id)}>
                     <Eye />
                 </div>
+                <div className="icono-visto" onClick={() => eliminarPelicula(id)}>
+                    <Trash2 />
+                </div>
             </div>
-            
         </div>
     );
 }
