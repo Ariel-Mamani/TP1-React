@@ -9,10 +9,10 @@ function Navbar({list, onClick}){
     return (
         <ul className="nav-list">
             <li><Input value={inputValue} onChange={setInputValue} /><Search size={20} /></li>
-            {list.map((item) =>
-                    <div className='flex'>
-                        <li className="nav-item"><a onClick={() => onClick(item)}> {item} </a></li>                     
-                    </div>
+            {list.map((item, index) =>
+                    // <div className='flex'>
+                        <li key= {index} className="nav-item"><a onClick={() => onClick(item)}> {item} </a></li>                     
+                    
                 )}  
         </ul>
     );
