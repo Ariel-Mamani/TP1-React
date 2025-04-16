@@ -1,34 +1,24 @@
-/* Estilo para el contenedor principal */
-
 .container {
-    /* display: flex; */
     flex-direction: column;
-    /* align-items: center; */
-    /* justify-content: center; */
     min-height: 100vh;
-    background-color: #f0f8ff; 
+    background-color: #f0f8ff;
     font-family: 'Arial', sans-serif;
-    /* padding-top: 60px; */
-    /* padding-bottom: 80px;  */
 }
 
-/* Título principal */
 .title {
-    font-size: 2.5rem; /* Tamaño del texto */
-    color: #2c3e50; /* Azul oscuro */
-    margin-bottom: 1rem; /* Espaciado inferior */
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
 }
 
-/* Párrafo */
 .paragraph {
-    font-size: 1.2rem; /* Tamaño del texto */
-    color: #34495e; /* Gris azulado */
-    text-align: center; /* Centrado */
-    line-height: 1.6; /* Altura de línea */
+    font-size: 1.2rem;
+    color: #34495e;
+    text-align: center;
+    line-height: 1.6;
 }
 
-/* Lista de peliculas y series */
-.peliculasLista{
+.peliculasLista {
     width: 100%;
     min-height: 500px;
     background-color: #bfbfde;
@@ -36,17 +26,17 @@
     margin: 10px;
     justify-content: center;
     border-radius: 10px;
-}  
+}
 
-h2{
+h2 {
     color: #1b1b32;
     font-size: 32px;
     font-family: Roboto, sans-serif;
-    text-align:  center;
+    text-align: center;
     margin: 20px 0;
 }
 
-h1{
+h1 {
     font-size: 30px;
     color: rgb(34, 34, 34);
     text-align: center;
@@ -66,9 +56,10 @@ h1{
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 15px;
-    gap: 10px;}
+    gap: 10px;
+}
 
-.pelicula-lista-contenedor{
+.pelicula-lista-contenedor {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -77,8 +68,24 @@ h1{
 }
 
 .peliculasInputs {
+    width: 210px;
     font-size: 16px;
     margin-left: 80px;
-    padding: 12px;
+    padding: 6px 10px;
     border-radius: 4px;
+}
+
+.peliculasSelect {
+    width: 210px;
+    font-size: 16px;
+    margin-left: 80px;
+    padding: 6px 10px;
+    ;
+    border-radius: 4px;
+}
+
+.flex {
+    display: flex;
+    margin-left: 40px;
+    padding: 40px;
 }
