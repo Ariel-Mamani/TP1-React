@@ -9,7 +9,7 @@ function Home(){
             <h1 className={homeModule.title}></h1>
             <p className={homeModule.paragraph}>Bienvenido a la página home de nuestra aplicación</p>
             <div >
-                <h1>Agregar pelicuas o series</h1>
+                <h1>Agregar peliculas o series</h1>
                 <ListaPyS/>
             </div>
         </div>

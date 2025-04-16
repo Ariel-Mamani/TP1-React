@@ -9,6 +9,7 @@ function ListaPyS() {
     
         useEffect(() => {
             const guardado = JSON.parse(localStorage.getItem('peliculas')) || [];
+            console.log("peliculas cargadas en el localStorage: ", guardado);
             setPeliculas(guardado);
     }, []);
 
@@ -62,7 +63,7 @@ function ListaPyS() {
                                 peliculaVista={peliculaVista}
                                 peliculaPorVer={peliculaVista}
                                 eliminarPelicula={eliminarPelicula}
-                                image={pelicula.image}
+                                image={"" ? null : pelicula.image}
                             />
                         ))
                     }
@@ -83,7 +84,7 @@ function ListaPyS() {
                             visto={pelicula.visto}
                             peliculaVista={peliculaVista}
                             eliminarPelicula={eliminarPelicula}
-                            image={pelicula.image}
+                            image={"" ? null : pelicula.image}
                             />
                         ))}
                     </div>  
@@ -103,12 +104,14 @@ function ListaPyS() {
                             visto={pelicula.visto}
                             peliculaVista={peliculaVista}
                             eliminarPelicula={eliminarPelicula}
-                            image={pelicula.image}
+                            image={"" ? null : pelicula.image}
                             />
                         ))}
                     </div>
                 </div>
         </div>
     );
+    
+
 }
 export default ListaPyS;

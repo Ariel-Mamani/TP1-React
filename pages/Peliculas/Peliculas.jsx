@@ -105,9 +105,9 @@ function Peliculas() {
                             genero={pelicula.genero}
                             tipo={pelicula.tipo}
                             visto={pelicula.visto}
-                            // peliculaVista={peliculaVista}
+                            peliculaVista={peliculaVista}
                             image={pelicula.image}
-                        // peliculaPorVer={peliculaVista} 
+                        peliculaPorVer={peliculaVista} 
                         />
                     ))
                 }
