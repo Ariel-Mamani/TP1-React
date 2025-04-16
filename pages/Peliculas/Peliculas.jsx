@@ -29,7 +29,8 @@ function Peliculas() {
         if (selectGeneroValue) {
             filtradas = filtradas.filter((item) =>
                 item.genero?.toLowerCase().includes(selectGeneroValue.toLowerCase())
-            );
+        );
+
         }
 
         if (selectTipoValue) {
@@ -94,7 +95,7 @@ function Peliculas() {
             </div>
             <hr></hr>
             <div className={peliculasModule.listaPeliculas}>
-                {
+                {peliculasFiltradas.length > 0 ? (
                     peliculasFiltradas.map((pelicula) => (
                         <Card
                             key={pelicula.id}
@@ -105,12 +106,17 @@ function Peliculas() {
                             genero={pelicula.genero}
                             tipo={pelicula.tipo}
                             visto={pelicula.visto}
-                            peliculaVista={peliculaVista}
+                            peliculaVista={pelicula.peliculaVista}
                             image={pelicula.image}
-                        peliculaPorVer={peliculaVista} 
+                        peliculaPorVer={pelicula.peliculaPorVer} 
                         />
                     ))
-                }
+                ) : (
+                    <div>
+                        <img src='https://lelandandwhiskers.com/wp-content/uploads/2015/05/no_movie_sm-300x296.jpg' alt='pelicula no encontrada'></img>
+                        <p>no se encontraron peliculas/series con los filtros aplicados</p>
+                    </div>
+                )}
             </div>
         </div>
 

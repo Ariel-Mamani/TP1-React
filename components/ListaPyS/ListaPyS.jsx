@@ -114,7 +114,7 @@ function ListaPyS() {
                         genero={pelicula.genero}
                         tipo={pelicula.tipo}
                         visto={pelicula.visto}
-                        // peliculaVista={peliculaVista}
+                        peliculaVista={peliculaVista}
                         eliminarPelicula={eliminarPelicula}
                         image={"" ? null : pelicula.image}
                         />
