@@ -6,15 +6,15 @@ import Card from "../Card/Card.jsx";
 
 function ListaPyS() {
     const [peliculas, setPeliculas] = useState([]); 
-    
+
         useEffect(() => {
             const guardado = JSON.parse(localStorage.getItem('peliculas')) || [];
             console.log("peliculas cargadas en el localStorage: ", guardado);
             setPeliculas(guardado);
     }, []);
 
-    const peliculasPorVer = peliculas.filter(p => !p.visto);
-    const peliculasVistas = peliculas.filter(p => p.visto);
+    const peliculaPorVer = peliculas.filter(pelicula => pelicula.visto === false);
+    const peliculasVistas = peliculas.filter(pelicula => pelicula.visto === true);
 
     // funcion para agregar una nueva pelicula/serie
     const agregarPelicula = pelicula => {
@@ -32,11 +32,23 @@ function ListaPyS() {
         localStorage.setItem('peliculas', JSON.stringify(peliculasActualizadas));
     }
 
+     // agrega a la lista de peliculas/series 'por ver'
+    const peliculaPorver = id => {
+        const peliculasActualizadas = peliculas.map(pelicula=>{
+            if(pelicula.id === id){
+                pelicula.visto = false; // cambia el estado
+            }
+            return pelicula;
+        });
+        setPeliculas(peliculasActualizadas);
+        localStorage.setItem('peliculas', JSON.stringify(peliculasActualizadas));
+    };
+
    // funcion para cambiar entre "Vista" y "Por ver"
     const peliculaVista = id =>{
         const peliculasActualizadas = peliculas.map(pelicula=>{
             if(pelicula.id === id){
-                pelicula.visto = !pelicula.visto; // cambia el estado
+                pelicula.visto = true; // cambia el estado
             }
             return pelicula;
         });
@@ -61,7 +73,7 @@ function ListaPyS() {
                                 tipo={pelicula.tipo}
                                 visto={pelicula.visto}
                                 peliculaVista={peliculaVista}
-                                peliculaPorVer={peliculaVista}
+                                peliculaPorver={peliculaPorver}
                                 eliminarPelicula={eliminarPelicula}
                                 image={"" ? null : pelicula.image}
                             />
@@ -69,49 +81,47 @@ function ListaPyS() {
                     }
                 </div>
             </div>
-                <div className='listaSection'>
-                    <h3>Por ver ({peliculasPorVer.length})</h3>
-                    <div className="cardGrid">
-                        {peliculasPorVer.map(pelicula => (
-                            <Card
-                            key={pelicula.id}
-                            id={pelicula.id}
-                            titulo={pelicula.titulo}
-                            director={pelicula.director}
-                            año={pelicula.año}
-                            genero={pelicula.genero}
-                            tipo={pelicula.tipo}
-                            visto={pelicula.visto}
-                            peliculaVista={peliculaVista}
-                            eliminarPelicula={eliminarPelicula}
-                            image={"" ? null : pelicula.image}
-                            />
-                        ))}
-                    </div>  
+            <div className='listaSection'>
+                <h3>Por ver ({peliculaPorVer.length})</h3>
+                <div className="cardGrid">
+                    {peliculaPorVer.map(pelicula => (
+                        <Card
+                        key={pelicula.id}
+                        id={pelicula.id}
+                        titulo={pelicula.titulo}
+                        director={pelicula.director}
+                        año={pelicula.año}
+                        genero={pelicula.genero}
+                        tipo={pelicula.tipo}
+                        visto={pelicula.visto}
+                        peliculaVista={peliculaVista}
+                        eliminarPelicula={eliminarPelicula}
+                        image={"" ? null : pelicula.image}
+                        />
+                    ))}
+                </div>  
+            </div>
+            <div className='listaSection'>
+                <h3>Vistas ({peliculasVistas.length})</h3>
+                <div className="cardGrid">
+                    {peliculasVistas.map(pelicula => (
+                        <Card
+                        key={pelicula.id}
+                        id={pelicula.id}
+                        titulo={pelicula.titulo}
+                        director={pelicula.director}
+                        año={pelicula.año}
+                        genero={pelicula.genero}
+                        tipo={pelicula.tipo}
+                        visto={pelicula.visto}
+                        // peliculaVista={peliculaVista}
+                        eliminarPelicula={eliminarPelicula}
+                        image={"" ? null : pelicula.image}
+                        />
+                    ))}
                 </div>
-                <div className='listaSection'>
-                    <h3>Vistas ({peliculasVistas.length})</h3>
-                    <div className="cardGrid">
-                        {peliculasVistas.map(pelicula => (
-                            <Card
-                            key={pelicula.id}
-                            id={pelicula.id}
-                            titulo={pelicula.titulo}
-                            director={pelicula.director}
-                            año={pelicula.año}
-                            genero={pelicula.genero}
-                            tipo={pelicula.tipo}
-                            visto={pelicula.visto}
-                            peliculaVista={peliculaVista}
-                            eliminarPelicula={eliminarPelicula}
-                            image={"" ? null : pelicula.image}
-                            />
-                        ))}
-                    </div>
-                </div>
+            </div>
         </div>
     );
-    
-
 }
 export default ListaPyS;

@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid' // Para generar ids unicos
 
 function Form(props) {
-
     const [imageBase64, setImageBase64] = useState(''); // Estado para la imagen en Base64
     const [formulario, setFormulario] = useState({
         // estado inicial del formulario 
@@ -16,16 +15,15 @@ function Form(props) {
         imagen: ''
     });
 
-     // funcion que actualiza el estado cuando se escribe en los inputs
-    const manejarCambio = evento => {
-        const elementoActual = evento.target;
-        const campo = elementoActual.name;  
-        const nuevoValor = elementoActual.value;  
-
-        setFormulario({
-            ...formulario,
-            [campo]: nuevoValor
-        });
+    // funcion que actualiza el estado cuando se escribe en los inputs
+    const manejarCambio = evento => { 
+        const elementoActual = evento.target;    // el input
+        const campo = elementoActual.name;       // el nombre del input
+        const nuevoValor = elementoActual.value; // lo que escribio en el input
+    
+        const nuevaData = { ...formulario };  // copiamos el formulario actual
+        nuevaData[campo] = nuevoValor;        // actualizamos el campo que cambio
+        setFormulario(nuevaData);             // actualizamos el estado
     };
 
     const handleImageChange = (event) => {
@@ -41,7 +39,7 @@ function Form(props) {
 
     // funcion que se ejecuta al enviar el formulario
     const manejarEnvio = e => {
-        e.preventDefault(); // para evitar que la pagina se recargue
+        e.preventDefault();
         // se crea un nuevo objeto pelicula con los datos del formulario
         const peliculaNueva = {
             id: uuidv4(), // esto genera un ID unico
@@ -50,7 +48,7 @@ function Form(props) {
             año: formulario.año,
             genero: formulario.genero,
             tipo: formulario.tipo,
-            visto: false, // por defecto no esta vista
+            visto: null, // por defecto no esta vista ni en por ver
             image: imageBase64
         };
         // se limpia formulario despues de enviar
