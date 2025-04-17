@@ -65,17 +65,6 @@ function ListaPyS() {
         localStorage.setItem('peliculas', JSON.stringify(peliculasActualizadas));
     };
 
-      // funcion editar pelicula
-    const editarPelicula = id =>{
-        const peliculasActualizadas = peliculas.map(pelicula=>{
-            if(pelicula.id === id){
-                
-            }
-            return pelicula;
-        });
-        setPeliculas(peliculasActualizadas);
-        localStorage.setItem('peliculas', JSON.stringify(peliculasActualizadas));
-    };
     return (
         <div>
             <div className="peliculasLista">
