@@ -1,10 +1,14 @@
 import React from "react";
 import './Style.css';
-import { Eye } from "lucide-react"; // icono para "Visto"
-import { Bookmark } from "lucide-react"; // icono para "Por ver"
-import { Trash2 } from "lucide-react"; // icono para "Por ver"
+import { Eye } from "lucide-react"; // Icono para "Visto"
+import { Bookmark } from "lucide-react"; // Icono para "Por ver"
+import { Trash2 } from "lucide-react"; // Icono para "Eliminar"
+import Button from "../Button/Button"; // Importa tu nuevo componente Button
+console.log("Button");
 
-function Card({ id, titulo, director, año, genero, tipo, visto, peliculaVista, peliculaPorver, eliminarPelicula, image}) {
+function Card({ id, titulo, director, año, genero, tipo, visto, peliculas, setPeliculas, image }) {
+    // console.log("iconos:",Bookmark);
+    
     return (
         <div className={visto ? "contenedor-peliculas vista" : "contenedor-peliculas"}>
             <div className="contenedor-info">
@@ -13,20 +17,36 @@ function Card({ id, titulo, director, año, genero, tipo, visto, peliculaVista, 
                 <p className="pelicula-detalle"><strong>Año:</strong> {año}</p>
                 <p className="pelicula-detalle"><strong>Género:</strong> {genero}</p>
                 <p className="pelicula-detalle"><strong>Tipo:</strong> {tipo}</p>
-                <img src={image == "" ? null : image} />
+                <img src={image === "" ? null : image} alt={`${titulo} Poster`} />
             </div>
             <div className="iconos">
-                <div title="marcar como 'Por ver'" className="icono-Novisto" onClick={() => peliculaPorver(id)}>
-                    <Bookmark />
-                </div>
-                <div title="marcar como 'Vista'" className="icono-visto" onClick={() => peliculaVista(id)}>
-                    <Eye />
-                </div>
-                <div title="Eliminar pelicula" className="icono-visto" onClick={() => eliminarPelicula(id)}>
-                    <Trash2 />
-                </div>
+                <Button 
+                    icon={Bookmark} 
+                    title="Marcar como 'Por ver'" 
+                    action="porVer" 
+                    id={id} 
+                    peliculas={peliculas} 
+                    setPeliculas={setPeliculas} 
+                />
+                <Button 
+                    icon={Eye} 
+                    title="Marcar como 'Vista'" 
+                    action="vista" 
+                    id={id} 
+                    peliculas={peliculas} 
+                    setPeliculas={setPeliculas} 
+                />
+                <Button 
+                    icon={Trash2} 
+                    title="Eliminar película" 
+                    action="eliminar" 
+                    id={id} 
+                    peliculas={peliculas} 
+                    setPeliculas={setPeliculas} 
+                />
             </div>
         </div>
     );
 }
+
 export default Card;
