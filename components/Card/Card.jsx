@@ -3,11 +3,12 @@ import './Style.css';
 import { Eye } from "lucide-react"; // Icono para "Visto"
 import { Bookmark } from "lucide-react"; // Icono para "Por ver"
 import { Trash2 } from "lucide-react"; // Icono para "Eliminar"
+import { Pencil } from "lucide-react"; // Icono para "Editar"
 import Button from "../Button/Button"; // Importa tu nuevo componente Button
 console.log("Button");
 
-function Card({ id, titulo, director, año, genero, tipo, visto, peliculas, setPeliculas, image }) {
-    // console.log("iconos:",Bookmark);
+
+function Card({ id, titulo, director, año, genero, tipo, visto, rating, peliculas, setPeliculas, editarPelicula, image }) {
     
     return (
         <div className={visto ? "contenedor-peliculas vista" : "contenedor-peliculas"}>
@@ -18,6 +19,7 @@ function Card({ id, titulo, director, año, genero, tipo, visto, peliculas, setP
                 <p className="pelicula-detalle"><strong>Género:</strong> {genero}</p>
                 <p className="pelicula-detalle"><strong>Tipo:</strong> {tipo}</p>
                 <img src={image === "" ? null : image} alt={`${titulo} Poster`} />
+                <p className="pelicula-detalle"><strong>Calificación:</strong>{rating}</p>
             </div>
             <div className="iconos">
                 <Button 
@@ -44,6 +46,7 @@ function Card({ id, titulo, director, año, genero, tipo, visto, peliculas, setP
                     peliculas={peliculas} 
                     setPeliculas={setPeliculas} 
                 />
+                <Pencil className="icono" onClick={editarPelicula}/>
             </div>
         </div>
     );

@@ -108,6 +108,7 @@ function Peliculas() {
                             visto={pelicula.visto}
                             peliculaVista={pelicula.peliculaVista}
                             image={pelicula.image}
+                            rating={pelicula.rating}
                         peliculaPorVer={pelicula.peliculaPorVer} 
                         />
                     ))
