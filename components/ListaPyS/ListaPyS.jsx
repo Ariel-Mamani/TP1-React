@@ -74,6 +74,8 @@ function ListaPyS() {
                                 titulo={pelicula.titulo}
                                 director={pelicula.director}
                                 año={pelicula.año}
+                                peliculas = {peliculas}
+                                setPeliculas={setPeliculas}
                                 genero={pelicula.genero}
                                 tipo={pelicula.tipo}
                                 visto={pelicula.visto}
