@@ -1,15 +1,17 @@
 import React from "react";
 import './Style.css';
+import '../../services/localStorage.js';
 import Formulario from '../../components/Formulario/Formulario.jsx';
 import { useState, useEffect  } from 'react';
 import Card from "../Card/Card.jsx";
 
 function ListaPyS() {
+
+    // console.log("peliculas cargadas en el localStoragee: ", localStorage.getItem('peliculas'));
     const [peliculas, setPeliculas] = useState([]); 
 
         useEffect(() => {
             const guardado = JSON.parse(localStorage.getItem('peliculas')) || [];
-            console.log("peliculas cargadas en el localStorage: ", guardado);
             setPeliculas(guardado);
     }, []);
 
@@ -19,7 +21,10 @@ function ListaPyS() {
     // funcion para agregar una nueva pelicula/serie
     const agregarPelicula = pelicula => {
         if(pelicula.titulo.trim()){ 
-            const peliculasActualizadas = [pelicula, ...peliculas];
+
+            // busco las peliculas previas
+            const peliculasPrevias = JSON.parse(localStorage.getItem('peliculas')) || [];
+            const peliculasActualizadas = [pelicula, ...peliculasPrevias];
             setPeliculas(peliculasActualizadas);
             localStorage.setItem('peliculas', JSON.stringify(peliculasActualizadas));
         }
