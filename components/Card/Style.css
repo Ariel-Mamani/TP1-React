@@ -1,13 +1,12 @@
-
 .contenedor-peliculas {
-    width: 300px; 
+    width: 300px;
     min-height: 120px;
     background-color: #1b1b32;
     border-radius: 8px;
     padding: 15px;
     margin-bottom: 10px;
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -38,7 +37,7 @@
 .iconos {
     display: flex;
     align-items: center;
-    gap: 10px; 
+    gap: 10px;
     cursor: pointer;
     margin-left: 10px;
     color: #cccbcb;
@@ -49,7 +48,12 @@
 }
 
 /* Pelicula o Serie vista */
-.contenedor-peliculas.vista{
+.contenedor-peliculas.vista {
     background-color: #5a01a7;
     /* text-decoration: line-through; */
+}
+
+.img {
+    height: 60%;
+    width: 100%;
 }

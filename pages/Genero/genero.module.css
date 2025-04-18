@@ -1,0 +1,92 @@
+.container {
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f0f8ff;
+    font-family: 'Arial', sans-serif;
+    padding: 20px;
+}
+
+.title {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.paragraph {
+    font-size: 1.2rem;
+    color: #34495e;
+    text-align: center;
+    line-height: 1.6;
+}
+
+.peliculasLista {
+    width: 100%;
+    min-height: 500px;
+    background-color: #bfbfde;
+    padding: 25px;
+    margin: 10px;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+h2 {
+    color: #1b1b32;
+    font-size: 32px;
+    font-family: Roboto, sans-serif;
+    text-align: center;
+    margin: 20px 0;
+}
+
+h1 {
+    font-size: 30px;
+    color: rgb(34, 34, 34);
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.listaSection {
+    background: #f5f5f5;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+}
+
+.listaPeliculas {
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: center; */
+    margin-top: 15px;
+    gap: 10px;
+}
+
+.pelicula-lista-contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 15px;
+    gap: 10px;
+}
+
+.peliculasInputs {
+    width: 210px;
+    font-size: 16px;
+    margin-left: 80px;
+    padding: 6px 10px;
+    border-radius: 4px;
+}
+
+.peliculasSelect {
+    width: 210px;
+    font-size: 16px;
+    margin-left: 80px;
+    padding: 6px 10px;
+    ;
+    border-radius: 4px;
+}
+
+.flex {
+    display: flex;
+    margin-left: 40px;
+    padding: 40px;
+}
