@@ -41,11 +41,26 @@ function Peliculas() {
 
         if (orden) {
             filtradas = [...filtradas].sort((a, b) => {
+              if (orden === 'asc') {
                 const añoA = parseInt(a.año, 10) || 0;
                 const añoB = parseInt(b.año, 10) || 0;
-                return orden === 'asc' ? añoA - añoB : añoB - añoA;
+                return añoA - añoB;
+              } else if (orden === 'desc') {
+                const añoA = parseInt(a.año, 10) || 0;
+                const añoB = parseInt(b.año, 10) || 0;
+                return añoB - añoA;
+              } else if (orden === 'ratingasc') {
+                const ratingA = parseFloat(a.rating) || 0;
+                const ratingB = parseFloat(b.rating) || 0;
+                return ratingA - ratingB;
+              } else if (orden === 'ratingdesc') {
+                const ratingA = parseFloat(a.rating) || 0;
+                const ratingB = parseFloat(b.rating) || 0;
+                return ratingB - ratingA;
+              }
+              return 0;
             });
-        }
+          }
 
         setPeliculasFiltradas(filtradas);
     }, [peliculas, inputValue, selectGeneroValue, selectTipoValue, orden]);
@@ -91,6 +106,8 @@ function Peliculas() {
                     <option value="">Ordenar</option>
                     <option value="asc">Año (Ascendente)</option>
                     <option value="desc">Año (Descendente)</option>
+                    <option value="ratingasc">Rating (Ascendente)</option>
+                    <option value="ratingdesc">Rating (Descendente)</option>
                 </select>
             </div>
             <hr></hr>
