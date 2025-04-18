@@ -3,6 +3,9 @@ import React from "react";
 
 function Button({ icon: Icon, title, action, id, peliculas, setPeliculas }) {
     const handleClick = () => {
+        if(peliculas === undefined ){
+            console.log("peliculas es undefiend");
+        }
         if (action === "eliminar") {
             const peliculasActualizadas = peliculas.filter(pelicula => pelicula.id !== id);
             setPeliculas(peliculasActualizadas);

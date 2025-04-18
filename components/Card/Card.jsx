@@ -4,11 +4,12 @@ import { Eye } from "lucide-react"; // Icono para "Visto"
 import { Bookmark } from "lucide-react"; // Icono para "Por ver"
 import { Trash2 } from "lucide-react"; // Icono para "Eliminar"
 import Button from "../Button/Button"; // Importa tu nuevo componente Button
-console.log("Button");
+import { useState } from "react";
+// console.log("Button");
 
-function Card({ id, titulo, director, año, genero, tipo, visto, peliculas, setPeliculas, image }) {
+function Card({ id, titulo, director, año, genero, tipo, visto, setPeliculas, peliculas, image }) {
     // console.log("iconos:",Bookmark);
-    
+    // const peliculas = JSON.parse(localStorage.getItem('peliculas'));
     return (
         <div className={visto ? "contenedor-peliculas vista" : "contenedor-peliculas"}>
             <div className="contenedor-info">

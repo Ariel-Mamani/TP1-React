@@ -10,7 +10,7 @@ function Peliculas() {
     const [selectGeneroValue, setSelectGeneroValue] = useState('');
     const [selectTipoValue, setSelectTipoValue] = useState('');
     const [orden, setOrden] = useState('');
-
+    console.log("peliculas.jsx");
     const [peliculas, setPeliculas] = useState(() => {
         const guardado = JSON.parse(localStorage.getItem('peliculas')) || [];
         return guardado;
@@ -103,6 +103,8 @@ function Peliculas() {
                             titulo={pelicula.titulo}
                             director={pelicula.director}
                             año={pelicula.año}
+                            peliculas = {peliculas}
+                            setPeliculas={setPeliculas}
                             genero={pelicula.genero}
                             tipo={pelicula.tipo}
                             visto={pelicula.visto}
@@ -112,7 +114,7 @@ function Peliculas() {
                         />
                     ))
                 ) : (
-                    <div>
+                    <div> {/* agregar a la lista de peliculas vistas y por ver */}
                         <img src='https://lelandandwhiskers.com/wp-content/uploads/2015/05/no_movie_sm-300x296.jpg' alt='pelicula no encontrada'></img>
                         <p>no se encontraron peliculas/series con los filtros aplicados</p>
                     </div>
