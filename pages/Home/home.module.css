@@ -6,7 +6,7 @@
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background-color: #f0f8ff; 
+    /* background-color: #f0f8ff;  */
     font-family: 'Arial', sans-serif;
     padding-top: 60px;
     padding-bottom: 80px; 
@@ -15,14 +15,18 @@
 /* Título principal */
 .title {
     font-size: 2.5rem; /* Tamaño del texto */
-    color: #2c3e50; /* Azul oscuro */
     margin-bottom: 1rem; /* Espaciado inferior */
+    color: rgb(255, 255, 255);
 }
-
+.pelisOseries{
+    color: white;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: #34495e81;
+}
 /* Párrafo */
 .paragraph {
-    font-size: 1.2rem; /* Tamaño del texto */
-    color: #34495e; /* Gris azulado */
+    font-size: 1.3rem; /* Tamaño del texto */
     text-align: center; /* Centrado */
     line-height: 1.6; /* Altura de línea */
 }
@@ -48,7 +52,6 @@ h2{
 
 h1{
     font-size: 30px;
-    color: rgb(34, 34, 34);
     text-align: center;
     font-weight: bold;
     margin-bottom: 20px;

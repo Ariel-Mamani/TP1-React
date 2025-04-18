@@ -4,3 +4,35 @@
     box-sizing: border-box;
     font-family: sans-serif;
 }
+/* 
+body{
+    background-color: red;
+} */
+
+@keyframes scrollBg {
+    from {
+      transform: translateY(0px);
+    }
+    to {
+      transform: translateY(-40px);
+    }
+  }
+  
+  .scroll-bg { 
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-bottom: 330px;
+    background-color: #000000;
+    background-image: url('https://robertvicol.com/wp-content/uploads/2021/02/3493/100-Top-Best-Movies-List2.jpg');
+    background-size: cover;
+    animation: scrollBg 20s linear forwards;
+    z-index: -1;
+  }
+.App {
+    position: relative; /* Crea un nuevo contexto de posicionamiento para el contenido */
+    z-index: 1; /* Asegura que el contenido esté por delante de scroll-bg */
+}

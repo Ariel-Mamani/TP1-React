@@ -6,12 +6,11 @@ function Home(){
     return (
         <div className={homeModule.container}>
             {/* <Title text="Página Home" /> */}
-            <h1 className={homeModule.title}></h1>
-            <p className={homeModule.paragraph}>Bienvenido a la página home de nuestra aplicación</p>
-            <div >
-                <h1>Agregar peliculas o series</h1>
-                <ListaPyS/>
+            <div className={homeModule.pelisOseries}>
+                <p className={homeModule.paragraph}>Bienvenido a la página home de nuestra aplicación</p>
+                <h1 className={homeModule.title}>Agregar peliculas o series</h1>
             </div>
+                <ListaPyS/>
         </div>
     );
 }
