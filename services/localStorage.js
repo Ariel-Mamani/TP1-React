@@ -9,7 +9,8 @@ const peliculas = {
       genero: "Ciencia ficcion",
       tipo: "Película",
       image: "",
-      visto: null
+      visto: null,
+      rating: '5'
     },
     1:{
       id: "2b3f9e72-d3ee-411b-9cde-4e1f6fcb5678",
@@ -19,7 +20,9 @@ const peliculas = {
       genero: "Ciencia ficcion",
       tipo: "Película",
       image: "",
-      visto: null
+      visto: null,
+      rating: '5'
+      
     },
     2:{
       id: "3c7d8f82-08ae-49e6-9a41-90c3caa98765",
@@ -29,7 +32,8 @@ const peliculas = {
       genero: "Ciencia ficcion",
       tipo: "Película",
       image: "",
-      visto: null
+      visto: null,
+      rating: '5'
     },
     3:{
       id: "4df0c935-f0b5-4b34-8d12-6a7a331155aa",
@@ -39,7 +43,8 @@ const peliculas = {
       genero: "Ciencia ficcion",
       tipo: "Serie",
       image: "",
-      visto: null
+      visto: null,
+      rating: '5'
     },
     4:{
       id: "5eaaf8b0-9c77-41aa-9e28-5ccaa0144444",
@@ -49,7 +54,8 @@ const peliculas = {
       genero: "Comedia",
       tipo: "Serie",
       image: "",
-      visto: null
+      visto: null,
+      rating: '5'
     },
     5:{
       id: "6fe09ab1-822c-4d5d-a03b-12edc74a3567",
@@ -59,7 +65,8 @@ const peliculas = {
       genero: "Terror",
       tipo: "Película",
       image: "",
-      visto: null
+      visto: null,
+      rating: '5'
     },
     6:{
       id: "7abc1f03-4a2b-4ef1-9c2e-d60e34a955cb",
@@ -69,7 +76,8 @@ const peliculas = {
       genero: "Drama",
       tipo: "Película",
       image: "",
-      visto: null
+      visto: null,
+      rating: '5'
     },
     7:{
       id: "8d92aee5-dfc3-498d-ae83-998de0a400f9",
@@ -79,7 +87,8 @@ const peliculas = {
       genero: "Ciencia ficcion",
       tipo: "Serie",
       image: "",
-      visto: null
+      visto: null,
+      rating: '5'
     },
     8:{
       id: "9e3b2cfa-2905-4e22-97fb-b72d9325123d",
@@ -89,7 +98,8 @@ const peliculas = {
       genero: "Drama",
       tipo: "Película",
       image: "",
-      visto: null
+      visto: null,
+      rating: '5'
     },
     9:{
       id: "10f57c3d-98d4-41f4-9b60-9bfa9801fbe1",
@@ -99,10 +109,11 @@ const peliculas = {
       genero: "Terror",
       tipo: "Película",
       image: "",
-      visto: null
+      visto: null,
+      rating: '5'
     }
 }
 
 // localStorage.setItem("peliculas", JSON.stringify(peliculas));
-localStorage.setItem("peliculas", JSON.stringify(Object.values(peliculas)));
+// localStorage.setItem("peliculas", JSON.stringify(Object.values(peliculas)));
 // console.log(localStorage.getItem("peliculas"));

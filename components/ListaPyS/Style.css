@@ -39,3 +39,25 @@ h2{
     text-align:  center;
     margin: 20px 0;
 }
+
+/* estilo modal */
+.modal-exito{
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    background-color: #1f6ad2;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    z-index: 9999;
+    font-weight: bold;
+    animation: fadeInOut 2.5s ease;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: translateX(-50%) translateY(-10px); }
+    10% { opacity: 1; transform: translateX(-50%) translateY(0); }
+    90% { opacity: 1; }
+    100% { opacity: 0; transform: translateX(-50%) translateY(-10px); }
+}

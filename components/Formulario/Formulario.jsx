@@ -1,7 +1,7 @@
 import './Style.css';
-import Button from '../../components/Button/Button.jsx';
 import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid' // Para generar ids unicos
+import { Star } from "lucide-react";
 
 function Form(props) {
     const [imageBase64, setImageBase64] = useState(''); // Estado para la imagen en Base64
@@ -12,7 +12,8 @@ function Form(props) {
         año: '',
         genero: '',
         tipo: '',
-        imagen: ''
+        imagen: '',
+        rating: ''
     });
 
     // funcion que actualiza el estado cuando se escribe en los inputs
@@ -49,7 +50,8 @@ function Form(props) {
             genero: formulario.genero,
             tipo: formulario.tipo,
             visto: null, // por defecto no esta vista ni en por ver
-            image: imageBase64
+            image: imageBase64,
+            rating: formulario.rating
         };
         // se limpia formulario despues de enviar
         props.onSubmit(peliculaNueva);
@@ -58,7 +60,8 @@ function Form(props) {
             director: '',
             año: '',
             genero: '',
-            tipo: ''
+            tipo: '',
+            rating: ''
         });
     };
     return (
@@ -85,7 +88,11 @@ function Form(props) {
                 <option value="Serie">Serie</option>
             </select>
             <input type="file" accept="image/*" onChange={handleImageChange} className="inputs" />
-            <Button text='Agregar' />
+            <label >
+                Calificación (0 a 5) <Star className="icono-estrella" />:
+            </label>
+                <input type="number"  className="input-estetico" name="rating" min="0" max="5" step="0.5"  onChange={manejarCambio} />
+            <button className='boton-agregar'>Agregar</button>
         </form>
     )
 }

@@ -31,6 +31,15 @@
     color: #1abc9c; /* Verde llamativo */
 }
 
+.nombrePagina {
+    font-size: 2rem;
+    color: #fffd7b;
+    margin: 0;
+    font-weight: bold;
+    margin-right: 200px;
+    animation: shine 2s infinite;
+}
+
 /* Diseño responsivo para pantallas pequeñas */
 @media (max-width: 768px) {
     .nav-list {

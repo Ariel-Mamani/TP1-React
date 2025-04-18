@@ -4,10 +4,10 @@ import '../../services/localStorage.js';
 import Formulario from '../../components/Formulario/Formulario.jsx';
 import { useState, useEffect  } from 'react';
 import Card from "../Card/Card.jsx";
+import { Popcorn } from "lucide-react"; // Icono para "Por ver"
 
 function ListaPyS() {
-
-    // console.log("peliculas cargadas en el localStoragee: ", localStorage.getItem('peliculas'));
+    const [mostrarModal, setMostrarModal] = useState(false);
     const [peliculas, setPeliculas] = useState([]); 
 
         useEffect(() => {
@@ -21,12 +21,16 @@ function ListaPyS() {
     // funcion para agregar una nueva pelicula/serie
     const agregarPelicula = pelicula => {
         if(pelicula.titulo.trim()){ 
-
             // busco las peliculas previas
             const peliculasPrevias = JSON.parse(localStorage.getItem('peliculas')) || [];
             const peliculasActualizadas = [pelicula, ...peliculasPrevias];
             setPeliculas(peliculasActualizadas);
             localStorage.setItem('peliculas', JSON.stringify(peliculasActualizadas));
+            // mostrar modal
+            setMostrarModal(true);
+            setTimeout(() => {
+                setMostrarModal(false);
+            }, 2500);
         }
     };
 
@@ -60,33 +64,16 @@ function ListaPyS() {
         setPeliculas(peliculasActualizadas);
         localStorage.setItem('peliculas', JSON.stringify(peliculasActualizadas));
     };
+
     return (
         <div>
             <div className="peliculasLista">
                 <Formulario onSubmit={agregarPelicula} />
-                <h2 >Peliculas y Series</h2>
-                <div className="pelicula-lista-contenedor">
-                    {
-                        peliculas.map((pelicula) => (
-                            <Card
-                                key={pelicula.id}
-                                id={pelicula.id}
-                                titulo={pelicula.titulo}
-                                director={pelicula.director}
-                                año={pelicula.año}
-                                peliculas = {peliculas}
-                                setPeliculas={setPeliculas}
-                                genero={pelicula.genero}
-                                tipo={pelicula.tipo}
-                                visto={pelicula.visto}
-                                peliculaVista={peliculaVista}
-                                peliculaPorver={peliculaPorver}
-                                eliminarPelicula={eliminarPelicula}
-                                image={"" ? null : pelicula.image}
-                            />
-                        ))
-                    }
-                </div>
+                {mostrarModal && (
+                    <div className="modal-exito">
+                        <Popcorn /> ¡Pelicula agregada con exito!
+                    </div>
+                )}
             </div>
             <div className='listaSection'>
                 <h3>Por ver ({peliculaPorVer.length})</h3>
@@ -101,6 +88,7 @@ function ListaPyS() {
                         genero={pelicula.genero}
                         tipo={pelicula.tipo}
                         visto={pelicula.visto}
+                        rating={pelicula.rating}
                         peliculaVista={peliculaVista}
                         eliminarPelicula={eliminarPelicula}
                         image={"" ? null : pelicula.image}
@@ -121,6 +109,7 @@ function ListaPyS() {
                         genero={pelicula.genero}
                         tipo={pelicula.tipo}
                         visto={pelicula.visto}
+                        rating={pelicula.rating}
                         peliculaVista={peliculaVista}
                         eliminarPelicula={eliminarPelicula}
                         image={"" ? null : pelicula.image}

@@ -39,24 +39,17 @@
     display: flex;
     align-items: center;
     gap: 10px; 
-}
-
-.icono-visto, .icono-Novisto {
     cursor: pointer;
     margin-left: 10px;
     color: #cccbcb;
 }
 
-.icono-visto:hover {
-    color: #49df51;
-}
-
-.icono-Novisto:hover {
-    color: #3d84d5;
+.icono:hover {
+    color: #c3df23;
 }
 
 /* Pelicula o Serie vista */
 .contenedor-peliculas.vista{
     background-color: #5a01a7;
-    text-decoration: line-through;
+    /* text-decoration: line-through; */
 }
