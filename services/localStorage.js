@@ -115,5 +115,5 @@ const peliculas = {
 }
 
 // localStorage.setItem("peliculas", JSON.stringify(peliculas));
-// localStorage.setItem("peliculas", JSON.stringify(Object.values(peliculas)));
+localStorage.setItem("peliculas", JSON.stringify(Object.values(peliculas)));
 // console.log(localStorage.getItem("peliculas"));

@@ -1,11 +1,12 @@
 import './Styles.css';
 import React from "react";
+import Title from '../Title/Title';
 
 function Navbar({list, onClick}){
     return (
         <ul className="nav-list">
             <li  className="nav-item nombrePagina">
-                <h1 className='nombrePagina'>Gestion.ar</h1>
+                <Title />
             </li>
             {list.map((item, index) =>
                     // <div className='flex'>

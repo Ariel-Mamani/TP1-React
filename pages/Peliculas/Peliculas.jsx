@@ -10,7 +10,7 @@ function Peliculas() {
     const [selectGeneroValue, setSelectGeneroValue] = useState('');
     const [selectTipoValue, setSelectTipoValue] = useState('');
     const [orden, setOrden] = useState('');
-    console.log("peliculas.jsx");
+    // console.log("peliculas.jsx");
     const [peliculas, setPeliculas] = useState(() => {
         const guardado = JSON.parse(localStorage.getItem('peliculas')) || [];
         return guardado;
