@@ -40,7 +40,7 @@ h2{
     margin: 20px 0;
 }
 
-/* estilo modal */
+/* estilo modal notificacion */
 .modal-exito{
     position: fixed;
     top: 20px;
@@ -60,4 +60,32 @@ h2{
     10% { opacity: 1; transform: translateX(-50%) translateY(0); }
     90% { opacity: 1; }
     100% { opacity: 0; transform: translateX(-50%) translateY(-10px); }
+}
+
+/* modal edicion */
+.modal-edicion {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); /* fondo oscuro con transparencia */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    margin-bottom: 100px;
+}
+
+.modal-contenido {
+    background-color: #fff; /* fondo blanco o el que uses */
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    margin-bottom: 100px;
 }

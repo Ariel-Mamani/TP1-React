@@ -1,21 +1,13 @@
-/* Estilo del botón */
-.button {
-    background-color: #3498db; /* Azul llamativo */
-    color: white; /* Texto en blanco */
-    font-size: 1rem; /* Tamaño del texto */
-    padding: 10px 20px; /* Espaciado interno */
-    border: none; /* Sin borde */
-    border-radius: 5px; /* Esquinas redondeadas */
-    cursor: pointer; /* Cambia el cursor al pasar por encima */
-    transition: background-color 0.3s ease; /* Animación suave */
+
+/* estilo botones */
+.icon-button{
+    background-color: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 8px;
 }
 
-/* Estilo al pasar el mouse por encima */
-.button:hover {
-    background-color: #2980b9; /* Azul más oscuro al hacer hover */
-}
-
-/* Estilo al hacer clic */
-.button:active {
-    background-color: #1c5985; /* Azul aún más oscuro */
+.icon-button:hover{
+    color: #1da1ff;
 }

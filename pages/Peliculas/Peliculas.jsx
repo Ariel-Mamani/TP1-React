@@ -1,8 +1,7 @@
 import peliculasModule from './peliculas.module.css';
-import Title from '../../components/Title/Title.jsx';
-import Button from '../../components/Button/Button.jsx';
 import Input from '../../components/Input/Input.jsx';
 import Card from '../../components/Card/Card.jsx';
+import Formulario from '../../components/Formulario/Formulario.jsx';
 import { useState, useEffect } from 'react';
 
 function Peliculas() {
@@ -10,13 +9,11 @@ function Peliculas() {
     const [selectGeneroValue, setSelectGeneroValue] = useState('');
     const [selectTipoValue, setSelectTipoValue] = useState('');
     const [orden, setOrden] = useState('');
-    // console.log("peliculas.jsx");
     const [peliculas, setPeliculas] = useState(() => {
         const guardado = JSON.parse(localStorage.getItem('peliculas')) || [];
         return guardado;
     });
     const [peliculasFiltradas, setPeliculasFiltradas] = useState(peliculas);
-
     useEffect(() => {
         let filtradas = peliculas;
 
@@ -30,7 +27,6 @@ function Peliculas() {
             filtradas = filtradas.filter((item) =>
                 item.genero?.toLowerCase().includes(selectGeneroValue.toLowerCase())
         );
-
         }
 
         if (selectTipoValue) {
@@ -81,6 +77,16 @@ function Peliculas() {
         setOrden(e.target.value);
     };
 
+    const [mostrarModalEdicion, setMostrarModalEdicion] = useState(false);
+    const [peliculaAEditar, setPeliculaAEditar] = useState(null);
+    const manejarEdicion = (id) => {
+        const pelicula = peliculas.find(p => p.id === id);
+        if(pelicula){
+            setPeliculaAEditar(pelicula);
+            setMostrarModalEdicion(true); // abrir el modal
+            console.log("AAAAAACAAAA"); // PROBANDO
+        }
+    };
     return (
         <div className={peliculasModule.container} >
             <div className={peliculasModule.flex}>
@@ -112,6 +118,21 @@ function Peliculas() {
             </div>
             <hr></hr>
             <div className={peliculasModule.listaPeliculas}>
+                {mostrarModalEdicion && peliculaAEditar && (
+                    <div className="modal-edicion">
+                        <div className="modal-contenido">
+                            <Formulario
+                                peliculaAEditar={peliculaAEditar}
+                                setPeliculas={setPeliculas}
+                                peliculas={peliculas}
+                                cerrarModal={() => {
+                                    setMostrarModalEdicion(false);
+                                    setPeliculaAEditar(null);
+                                }}
+                            />
+                        </div>
+                    </div>
+                )}
                 {peliculasFiltradas.length > 0 ? (
                     peliculasFiltradas.map((pelicula) => (
                         <Card
@@ -120,15 +141,14 @@ function Peliculas() {
                             titulo={pelicula.titulo}
                             director={pelicula.director}
                             año={pelicula.año}
-                            peliculas = {peliculas}
-                            setPeliculas={setPeliculas}
                             genero={pelicula.genero}
                             tipo={pelicula.tipo}
                             visto={pelicula.visto}
-                            peliculaVista={pelicula.peliculaVista}
-                            image={pelicula.image}
                             rating={pelicula.rating}
-                        peliculaPorVer={pelicula.peliculaPorVer} 
+                            setPeliculas={setPeliculas}
+                            peliculas = {peliculas}
+                            image={pelicula.image}
+                            onEditar={manejarEdicion}
                         />
                     ))
                 ) : (
@@ -139,7 +159,6 @@ function Peliculas() {
                 )}
             </div>
         </div>
-
     );
 }
 export default Peliculas;

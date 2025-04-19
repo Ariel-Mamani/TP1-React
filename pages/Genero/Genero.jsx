@@ -1,6 +1,7 @@
 import generoModule from './genero.module.css';
 import Card from '../../components/Card/Card.jsx';
-import { useState, useEffect } from 'react';
+import { useState} from 'react';
+import Formulario from '../../components/Formulario/Formulario.jsx';
 
 function Genero() {
     const [peliculas, setPeliculas] = useState(() => {
@@ -16,12 +17,37 @@ function Genero() {
     const [peliculaslista, setPeliculaslista] = useState([[terror, "Terror"], [cienciaficcion, "Ciencia ficcion"]
         , [drama, "Drama"], [comedia, "Comedia"]]);
 
+    const [mostrarModalEdicion, setMostrarModalEdicion] = useState(false);
+    const [peliculaAEditar, setPeliculaAEditar] = useState(null);
+    const manejarEdicion = (id) => {
+        const pelicula = peliculas.find(p => p.id === id);
+        if(pelicula){
+            setPeliculaAEditar(pelicula);
+            setMostrarModalEdicion(true); // abrir el modal
+            console.log("AAAAAACAAAA"); // PROBANDO
+        }
+    };
     return (
         <div className={generoModule.container} >
             {peliculaslista.map((pelicula) => (
                 <div>
                     <h1>{pelicula[1]} ({pelicula[0].length})</h1>
                     <div className={generoModule.listaPeliculas}>
+                        {mostrarModalEdicion && peliculaAEditar && (
+                            <div className="modal-edicion">
+                                <div className="modal-contenido">
+                                    <Formulario
+                                        peliculaAEditar={peliculaAEditar}
+                                        setPeliculas={setPeliculas}
+                                        peliculas={peliculas}
+                                        cerrarModal={() => {
+                                            setMostrarModalEdicion(false);
+                                            setPeliculaAEditar(null);
+                                        }}
+                                    />
+                                </div>
+                            </div>
+                        )}
                         {pelicula[0].length > 0 ? (pelicula[0].map((pelicula) => (
                             <Card
                                 key={pelicula.id}
@@ -29,15 +55,14 @@ function Genero() {
                                 titulo={pelicula.titulo}
                                 director={pelicula.director}
                                 año={pelicula.año}
-                                peliculas={peliculas}
-                                setPeliculas={setPeliculas}
                                 genero={pelicula.genero}
                                 tipo={pelicula.tipo}
                                 visto={pelicula.visto}
-                                peliculaVista={pelicula.peliculaVista}
-                                image={pelicula.image}
                                 rating={pelicula.rating}
-                                peliculaPorVer={pelicula.peliculaPorVer}
+                                setPeliculas={setPeliculas}
+                                peliculas = {peliculas}
+                                image={pelicula.image}
+                                onEditar={manejarEdicion}
                             />
                         ))) : (
                             <div>

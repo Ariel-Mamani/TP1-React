@@ -44,16 +44,22 @@ select {
     box-shadow: 0 6px 12px rgba(0,0,0,0.3);
 }
 
-
-.input-estetico {
-padding: 3px;
-border-radius: 8px;
-border: 1px solid #ccc;
-font-size: 1rem;
-width: 100%;
-max-width: 200px;
+/* boton cancelar del modal */
+.boton-cancelar {
+    background-color: #d21f1f; 
+    color: white;
+    padding: 10px 20px;
+    margin-left: 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
-
-.icono-estrella {
-    color: gold;
+.boton-cancelar:hover{
+    background-color: #9a0404;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
 }

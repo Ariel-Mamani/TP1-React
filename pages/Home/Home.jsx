@@ -1,7 +1,5 @@
 import homeModule from './home.module.css';
-import Title from '../../components/Title/Title.jsx';
 import ListaPyS from '../../components/ListaPyS/ListaPyS.jsx';
-import Header from '../../components/Header/Header.jsx';
 function Home(){
     return (
         <div className={homeModule.container}>

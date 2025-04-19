@@ -5,12 +5,12 @@ import { Bookmark } from "lucide-react"; // Icono para "Por ver"
 import { Trash2 } from "lucide-react"; // Icono para "Eliminar"
 import { Pencil } from "lucide-react"; // Icono para "Editar"
 import Button from "../Button/Button"; // Importa tu nuevo componente Button
-import { useState } from "react";
-// console.log("Button");
 
-
-function Card({ id, titulo, director, año, genero, tipo, visto, rating, setPeliculas, peliculas, editarPelicula, image }) {
+function Card({ id, titulo, director, año, genero, tipo, visto, rating, setPeliculas, peliculas, editarPelicula, image, onEditar }) {
     // const peliculas = JSON.parse(localStorage.getItem('peliculas'));
+    const manejarEdicion = () => {
+        onEditar(id);
+    };
     return (
         <div className={visto ? "contenedor-peliculas vista" : "contenedor-peliculas"}>
             <div className="contenedor-info">
@@ -47,10 +47,17 @@ function Card({ id, titulo, director, año, genero, tipo, visto, rating, setPeli
                     peliculas={peliculas}
                     setPeliculas={setPeliculas}
                 />
-                <Pencil className="icono" onClick={editarPelicula} />
+                <Button
+                    icon={Pencil}
+                    title="Editar película"
+                    action="editar"
+                    id={id}
+                    peliculas={peliculas}
+                    setPeliculas={setPeliculas}
+                    onClick={manejarEdicion}
+                />
             </div>
         </div>
     );
 }
-
 export default Card;
