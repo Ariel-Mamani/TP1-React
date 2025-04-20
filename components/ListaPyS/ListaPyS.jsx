@@ -4,7 +4,7 @@ import '../../services/localStorage.js';
 import Formulario from '../../components/Formulario/Formulario.jsx';
 import { useState, useEffect  } from 'react';
 import Card from "../Card/Card.jsx";
-import { Popcorn } from "lucide-react"; // Icono para "Por ver"
+import { Popcorn, Squirrel, Bird} from "lucide-react"; 
 
 function ListaPyS() {
     // modal notificacion pelicula agregada
@@ -73,45 +73,59 @@ function ListaPyS() {
             <div className='listaSection'>
                 <h3>Por ver ({peliculaPorVer.length})</h3>
                 <div className="cardGrid">
-                    {peliculaPorVer.map(pelicula => (
-                        <Card
-                        key={pelicula.id}
-                        id={pelicula.id}
-                        titulo={pelicula.titulo}
-                        director={pelicula.director}
-                        año={pelicula.año}
-                        genero={pelicula.genero}
-                        tipo={pelicula.tipo}
-                        visto={pelicula.visto}
-                        rating={pelicula.rating}
-                        setPeliculas={setPeliculas}
-                        peliculas = {peliculas}
-                        image={"" ? null : pelicula.image}
-                        onEditar={manejarEdicion}
-                        />
-                    ))}
-                </div>  
+                    {peliculaPorVer.length === 0 ? (
+                        <div>
+                            <Squirrel className="icono" size={150} strokeWidth={1.25} />
+                            <p className="mensaje-lista-vacia">No hay peliculas o series por ver</p>
+                        </div>
+                    ) : (
+                        peliculaPorVer.map(pelicula => (
+                            <Card
+                                key={pelicula.id}
+                                id={pelicula.id}
+                                titulo={pelicula.titulo}
+                                director={pelicula.director}
+                                año={pelicula.año}
+                                genero={pelicula.genero}
+                                tipo={pelicula.tipo}
+                                visto={pelicula.visto}
+                                rating={pelicula.rating}
+                                setPeliculas={setPeliculas}
+                                peliculas={peliculas}
+                                image={pelicula.image || null}
+                                onEditar={manejarEdicion}
+                            />
+                        ))
+                    )}
+                </div>
             </div>
             <div className='listaSection'>
                 <h3>Vistas ({peliculasVistas.length})</h3>
                 <div className="cardGrid">
-                    {peliculasVistas.map(pelicula => (
-                        <Card
-                        key={pelicula.id}
-                        id={pelicula.id}
-                        titulo={pelicula.titulo}
-                        director={pelicula.director}
-                        año={pelicula.año}
-                        genero={pelicula.genero}
-                        tipo={pelicula.tipo}
-                        visto={pelicula.visto}
-                        rating={pelicula.rating}
-                        setPeliculas={setPeliculas}
-                        peliculas = {peliculas}
-                        image={"" ? null : pelicula.image}
-                        onEditar={manejarEdicion}
-                        />
-                    ))}
+                    {peliculasVistas.length === 0 ? (
+                        <div>
+                            <Bird className="icono" size={150} />
+                            <p className="mensaje-lista-vacia">No hay películas o series vistas aún </p>
+                        </div>
+                    ) : (
+                        peliculasVistas.map(pelicula => (
+                            <Card
+                                key={pelicula.id}
+                                id={pelicula.id}
+                                titulo={pelicula.titulo}
+                                director={pelicula.director}
+                                año={pelicula.año}
+                                genero={pelicula.genero}
+                                tipo={pelicula.tipo}
+                                visto={pelicula.visto}
+                                rating={pelicula.rating}
+                                setPeliculas={setPeliculas}
+                                peliculas={peliculas}
+                                image={pelicula.image || null}
+                                onEditar={manejarEdicion}
+                            />
+                        ))
+                    )}
                 </div>
             </div>
         </div>
