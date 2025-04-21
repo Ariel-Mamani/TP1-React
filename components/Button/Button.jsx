@@ -8,18 +8,21 @@ function Button({ icon: Icon, title, action, id, peliculas, setPeliculas, onClic
             return; 
         }
         if(action !== undefined){
-            const peliculasActualizadas = Object.values(peliculas).map(pelicula => {
-                if(pelicula && pelicula.id === id){
-                    if(action === "eliminar"){
-                        pelicula.visto = null;
-                    }else if(action === "porVer"){
-                        pelicula.visto = false;
-                    }else{ // action == "vista"
-                        pelicula.visto = true;
+            let peliculasActualizadas;
+            if(action === "eliminar") {
+                peliculasActualizadas = peliculas.filter(pelicula => pelicula.id !== id);
+            }else{
+                peliculasActualizadas = Object.values(peliculas).map(pelicula => {
+                    if(pelicula && pelicula.id === id){
+                        if(action === "porVer"){
+                            pelicula.visto = false;
+                        }else{
+                            pelicula.visto = true;
+                        }
                     }
-                }
-                return pelicula;
-            });
+                    return pelicula;
+                });
+            }
             setPeliculas(peliculasActualizadas);
             localStorage.setItem("peliculas", JSON.stringify(peliculasActualizadas));
         }

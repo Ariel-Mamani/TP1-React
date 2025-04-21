@@ -91,3 +91,22 @@ h1 {
     margin-left: 40px;
     padding: 40px;
 }
+/* En tu archivo CSS (Style.css o donde manejes los estilos) */
+.mensajeListaVacia{
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+    text-align: center; 
+    gap: 16px; 
+    width: 100%; 
+    margin: 0 auto; 
+    font-size: 2rem;
+    margin: 10px;
+}
+
+.icono {
+    /* Estilos adicionales si necesitas ajustar el ícono */
+    color: #ff6b6b; /* Ejemplo: cambia el color si es un ícono de línea */
+}
+

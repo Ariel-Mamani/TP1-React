@@ -13,6 +13,7 @@ function Peliculas() {
         const guardado = JSON.parse(localStorage.getItem('peliculas')) || [];
         return guardado;
     });
+    
     const [peliculasFiltradas, setPeliculasFiltradas] = useState(peliculas);
     useEffect(() => {
         let filtradas = peliculas;
@@ -84,7 +85,6 @@ function Peliculas() {
         if(pelicula){
             setPeliculaAEditar(pelicula);
             setMostrarModalEdicion(true); // abrir el modal
-            console.log("AAAAAACAAAA"); // PROBANDO
         }
     };
     return (

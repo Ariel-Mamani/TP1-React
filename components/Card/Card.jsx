@@ -6,7 +6,7 @@ import { Trash2 } from "lucide-react"; // Icono para "Eliminar"
 import { Pencil } from "lucide-react"; // Icono para "Editar"
 import Button from "../Button/Button"; // Importa tu nuevo componente Button
 
-function Card({ id, titulo, director, año, genero, tipo, visto, rating, setPeliculas, peliculas, editarPelicula, image, onEditar }) {
+function Card({ id, titulo, director, año, genero, tipo, visto, rating, setPeliculas, peliculas, image, onEditar }) {
     // const peliculas = JSON.parse(localStorage.getItem('peliculas'));
     const manejarEdicion = () => {
         onEditar(id);

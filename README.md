@@ -25,3 +25,7 @@ Archivo de estilos globales de la aplicación. Se suele importar a index.js para
 4. **package.json:**
 es el archivo de configuración del proyecto. Contiene metadatos como su nombre, versión, dependencias y scripts(como start, build, deploy), versión del proyecto y más.
 Es fundamental para que npm sepa cómo manejar la aplicación. 
+
+
+***** lINK AL PROYECTO EN VERCEL ****
+https://tp-1-react-o9qx.vercel.app/

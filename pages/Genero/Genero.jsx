@@ -2,6 +2,7 @@ import generoModule from './genero.module.css';
 import Card from '../../components/Card/Card.jsx';
 import { useState} from 'react';
 import Formulario from '../../components/Formulario/Formulario.jsx';
+import {Squirrel} from "lucide-react"; 
 
 function Genero() {
     const [peliculas, setPeliculas] = useState(() => {
@@ -65,8 +66,9 @@ function Genero() {
                                 onEditar={manejarEdicion}
                             />
                         ))) : (
-                            <div>
-                                <p>no se encontraron peliculas/series para este género</p>
+                            <div className={generoModule.mensajeListaVacia}>
+                                <Squirrel className={generoModule.icono} size={150} strokeWidth={1.25} />
+                                <p >no se encontraron peliculas/series para este género</p>
                             </div>
                         )}
                     </div>
