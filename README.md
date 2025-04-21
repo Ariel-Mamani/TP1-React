@@ -5,6 +5,15 @@
 - **Diego Marchandon** FAI-4886
 - **Ignacio Araya** FAI-836
 
+## Instrucciones:
+El sistema puede ser corrido directamente desde la aplicación Vercel a travez del siguiente link:
+ - https://tp-1-react-o9qx.vercel.app/ 
+
+Para ejecutarlo de manera local es necesario clonar el proyecto e instalar las dependencias:
+ - git clone https://github.com/Ariel-Mamani/TP1-React.git
+ - npm install
+ - npm run dev
+
 ## Descripción del proyecto: 
 Construir en React una aplicación que funcione como gestor personal de películas y series.
 La aplicación debe permitir al usuario agregar nuevas películas o series, marcarlas como 
