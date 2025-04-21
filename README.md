@@ -6,10 +6,10 @@
 - **Ignacio Araya** FAI-836
 
 ## Instrucciones:
-El sistema puede ser corrido directamente desde la aplicación Vercel a travez del siguiente link:
+El sistema puede ser corrido directamente desde la aplicación Vercel a través del siguiente link:
  - https://tp-1-react-o9qx.vercel.app/ 
 
-Para ejecutarlo de manera local es necesario clonar el proyecto e instalar las dependencias:
+Para ejecutarlo de manera local, es necesario clonar el proyecto e instalar las siguientes dependencias:
 <h3>Instalación paso por paso</h3>
 <ol>
     <li>
@@ -18,15 +18,15 @@ Para ejecutarlo de manera local es necesario clonar el proyecto e instalar las d
         <img src="./public/Guia/paso1.png" alt="Imagen de como se clona">
     </li>
     <li>
-        Una vez clonado nos posisionamos en la carpeta del proyrcto(TP1-React), abrimos el terminal y usamos el comando <strong>npm install</strong>
+        Una vez clonado nos posicionamos en la carpeta del proyecto(TP1-React), abrimos el terminal y usamos el comando <strong>npm install</strong> para instalar las dependencias necesarias que se listan en el archivo <b>package.json</b>
         <img src="./public/Guia/paso2.png" alt="Imagen de comando de instalacion">
     </li>
     <li>
-        Tambien debera ejecutar los siguientes comandos que son para instalar las librerias que usamos:
+        Tambien deberá  ejecutar los siguientes comandos, para instalar las librerias que usamos:
         <li>Libreria de Iconos Lucide: usamos el comando <strong>npm install lucide-react</strong>
         <img src="./public/Guia/paso3.png" alt="Imagen de comando de instalacion de Lucide">
         </li>
-        <li>Libreria para crear Ids unicos(uuid): ingresamos el comando <strong>npm instal uuid</strong>
+        <li>Librería para crear IDs únicos(uuid): ingresamos el comando <strong>npm instal uuid</strong>
         <img src="./public/Guia/paso4.png" alt="Imagen de comando de instalacion de uuid"></li>
     </li>
     <li>
