@@ -10,9 +10,34 @@ El sistema puede ser corrido directamente desde la aplicación Vercel a travez d
  - https://tp-1-react-o9qx.vercel.app/ 
 
 Para ejecutarlo de manera local es necesario clonar el proyecto e instalar las dependencias:
- - git clone https://github.com/Ariel-Mamani/TP1-React.git
- - npm install
- - npm run dev
+<h3>Instalación paso por paso</h3>
+<ol>
+    <li>
+        Para instalar la aplicación nos posicionamos con una terminal en la carpeta donde queremos descargarla y ejecutamos el siguiente comando:
+        git clone https://github.com/Ariel-Mamani/TP1-React.git
+        <img src="./public/Guia/paso1.png" alt="Imagen de como se clona">
+    </li>
+    <li>
+        Una vez clonado nos posisionamos en la carpeta del proyrcto(TP1-React), abrimos el terminal y usamos el comando <strong>npm install</strong>
+        <img src="./public/Guia/paso2.png" alt="Imagen de comando de instalacion">
+    </li>
+    <li>
+        Tambien debera ejecutar los siguientes comandos que son para instalar las librerias que usamos:
+        <li>Libreria de Iconos Lucide: usamos el comando <strong>npm install lucide-react</strong>
+        <img src="./public/Guia/paso3.png" alt="Imagen de comando de instalacion de Lucide">
+        </li>
+        <li>Libreria para crear Ids unicos(uuid): ingresamos el comando <strong>npm instal uuid</strong>
+        <img src="./public/Guia/paso4.png" alt="Imagen de comando de instalacion de uuid"></li>
+    </li>
+    <li>
+        Después de que todo se instala usamos el comando <strong>npm run dev</strong>
+        <img src="./public/Guia/paso5.png" alt="Imagen de como levantar el proyecto">
+    </li>
+    <li>
+        Y finalmente se abre la app en el navegador predeterminado
+        <img src="./public/Guia/paso6.png" alt="Imagen de como se se ve el proyecto en el navegador">
+    </li>
+</ol>
 
 ## Descripción del proyecto: 
 Construir en React una aplicación que funcione como gestor personal de películas y series.
@@ -36,34 +61,4 @@ es el archivo de configuración del proyecto. Contiene metadatos como su nombre,
 Es fundamental para que npm sepa cómo manejar la aplicación. 
 
 
-## lINK AL PROYECTO EN VERCEL 
-https://tp-1-react-o9qx.vercel.app/
 
-<h3>Instalación paso por paso</h3>
-<ol>
-    <li>
-        Para instalar la aplicación nos posicionamos con una terminal en la carpeta donde queremos descargarla y ejecutamos el siguiente comando:
-        git clone https://github.com/Ariel-Mamani/TP1-React.git
-        <img src="./public/Guia/paso1.png" alt="Imagen de como se clona">
-    </li>
-    <li>
-        Una vez clonado nos posisionamos en la carpeta del proyrcto(TP1-React), abrimos el terminal y usamos el comando npm install
-        <img src="./public/Guia/paso2.png" alt="Imagen de comando de instalacion">
-    </li>
-    <li>
-        Tambien debera ejecutar los siguientes comandos que son para instalar las librerias que usamos:
-        <li>Libreria de Iconos Lucide: usamos el comando npm install lucide-react
-        <img src="./public/Guia/paso3.png" alt="Imagen de comando de instalacion de Lucide">
-        </li>
-        <li>Libreria para crear Ids unicos(uuid): ingresamos el comando npm instal uuid
-        <img src="./public/Guia/paso4.png" alt="Imagen de comando de instalacion de uuid"></li>
-    </li>
-    <li>
-        Después de que todo se instala usamos el comando npm run dev
-        <img src="./public/Guia/paso5.png" alt="Imagen de como levantar el proyecto">
-    </li>
-    <li>
-        Y finalmente se abre la app en el navegador predeterminado
-        <img src="./public/Guia/paso6.png" alt="Imagen de como se se ve el proyecto en el navegador">
-    </li>
-</ol>
