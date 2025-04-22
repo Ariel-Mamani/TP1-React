@@ -114,6 +114,13 @@ const peliculas = {
     }
 }
 
+// verificamos si ya hay datos en localStorage
+if (!localStorage.getItem("peliculas")) {
+  // Si no hay nada, cargamos las películas por defecto
+  localStorage.setItem("peliculas", JSON.stringify(peliculas)); 
+}
+
+
 // localStorage.setItem("peliculas", JSON.stringify(peliculas));
 // localStorage.setItem("peliculas", JSON.stringify(Object.values(peliculas)));
 // console.log(localStorage.getItem("peliculas"));
