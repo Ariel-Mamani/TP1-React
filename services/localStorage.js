@@ -114,8 +114,9 @@ const peliculas = {
     }
 }
 
-// verificamos si ya hay datos en localStorage
-if (!localStorage.getItem("peliculas")) {
+// verificamos si ya hay datos en localStorage O si el arreglo está vacío
+const peliculasGuardadas = localStorage.getItem("peliculas");
+if (!peliculasGuardadas || JSON.parse(peliculasGuardadas).length === 0) {
   // Si no hay nada, cargamos las películas por defecto
   localStorage.setItem("peliculas", JSON.stringify(peliculas)); 
 }
