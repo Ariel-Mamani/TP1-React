@@ -13,7 +13,7 @@ function ListaPyS() {
 
         useEffect(() => {
             const guardado = JSON.parse(localStorage.getItem('peliculas')) || [];
-            setPeliculas(Object.values(guardado));
+            setPeliculas(guardado);
     }, []);
     const peliculaPorVer = peliculas.filter(pelicula => pelicula.visto === false);
     const peliculasVistas = peliculas.filter(pelicula => pelicula.visto === true);
