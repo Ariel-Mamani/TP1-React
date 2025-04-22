@@ -114,15 +114,11 @@ const peliculas = {
     }
 }
 
-// verificamos si ya hay datos en localStorage O si el arreglo está vacío
-/* const peliculasGuardadas = localStorage.getItem("peliculas");
-if (!peliculasGuardadas || JSON.parse(peliculasGuardadas).length === 0) {
+// verificamos si ya hay datos en localStorage
+if (!localStorage.getItem("peliculas")) {
   // Si no hay nada, cargamos las películas por defecto
-  localStorage.setItem("peliculas", JSON.stringify(Object.values(peliculas))); 
-
-  // const peliculasGuardadasAhora = JSON.parse(localStorage.getItem("peliculas"));
-  // console.log("peliculas de localStorage:",peliculasGuardadasAhora);
-} */
+  localStorage.setItem("peliculas", JSON.stringify(peliculas)); 
+}
 
 
 // localStorage.setItem("peliculas", JSON.stringify(peliculas));

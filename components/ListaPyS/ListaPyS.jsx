@@ -25,7 +25,7 @@ function ListaPyS() {
             const peliculasPrevias = JSON.parse(localStorage.getItem('peliculas')) || [];
             const peliculasActualizadas = [pelicula, ...peliculasPrevias];
             setPeliculas(peliculasActualizadas);
-            localStorage.setItem('peliculas', JSON.stringify(Object.values(peliculasActualizadas)));
+            localStorage.setItem('peliculas', JSON.stringify(peliculasActualizadas));
             // mostrar modal pelicula agregada
             setMostrarModal(true);
             setTimeout(() => {
