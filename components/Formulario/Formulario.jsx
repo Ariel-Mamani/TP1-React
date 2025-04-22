@@ -70,7 +70,7 @@ function Form({ onSubmit, peliculaAEditar, peliculas, setPeliculas, cerrarModal 
                 pelicula.id === peliculaAEditar.id ? nuevaPelicula : pelicula
             );
             setPeliculas(actualizadas);
-            localStorage.setItem("peliculas", JSON.stringify(actualizadas));
+            localStorage.setItem("peliculas", JSON.stringify(Object.values(actualizadas)));
             cerrarModal();
         }else{
             // si la peli es nueva

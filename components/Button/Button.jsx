@@ -63,7 +63,7 @@ function Button({ icon: Icon, title, action, id, peliculas, setPeliculas, onClic
                 });
             }
             setPeliculas(peliculasActualizadas);
-            localStorage.setItem("peliculas", JSON.stringify(peliculasActualizadas));
+            localStorage.setItem("peliculas", JSON.stringify(Object.values(peliculasActualizadas)));
         }
     };
     return (
