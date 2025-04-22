@@ -118,7 +118,7 @@ const peliculas = {
 const peliculasGuardadas = localStorage.getItem("peliculas");
 if (!peliculasGuardadas || JSON.parse(peliculasGuardadas).length === 0) {
   // Si no hay nada, cargamos las películas por defecto
-  localStorage.setItem("peliculas", JSON.stringify(peliculas)); 
+  localStorage.setItem("peliculas", JSON.stringify(Object.values(peliculas))); 
 }
 
 
