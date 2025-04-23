@@ -22,7 +22,7 @@ function ListaPyS() {
     const agregarPelicula = pelicula => {
         if(pelicula.titulo.trim()){ 
             // busco las peliculas previas
-            const peliculasPrevias = JSON.parse(localStorage.getItem('peliculas')) || [];
+            const peliculasPrevias = Object.values(JSON.parse(localStorage.getItem('peliculas'))) || [];
             const peliculasActualizadas = [pelicula, ...peliculasPrevias];
             setPeliculas(peliculasActualizadas);
             localStorage.setItem('peliculas', JSON.stringify(peliculasActualizadas));
