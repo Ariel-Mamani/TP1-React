@@ -113,6 +113,7 @@ const peliculas = {
       rating: '4'
     }
 }
+//Borren codigo comentado
 
 // verificamos si ya hay datos en localStorage
 /* if (!localStorage.getItem("peliculas")) {

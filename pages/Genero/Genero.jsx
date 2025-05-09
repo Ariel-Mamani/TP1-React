@@ -25,6 +25,7 @@ function Genero() {
         if(pelicula){
             setPeliculaAEditar(pelicula);
             setMostrarModalEdicion(true); // abrir el modal
+            //Borren logs
             console.log("AAAAAACAAAA"); // PROBANDO
         }
     };

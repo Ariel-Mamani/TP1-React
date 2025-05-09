@@ -1,4 +1,4 @@
-import homeModule from './home.module.css';
+import homeModule from './home.module.css'; 
 import ListaPyS from '../../components/ListaPyS/ListaPyS.jsx';
 function Home(){
     return (

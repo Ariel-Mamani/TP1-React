@@ -1,3 +1,21 @@
+//correcciones
+
+- Muy buen readme, muy completo.
+- El proyecto se ve ordenado, hicieron buenos componentes reutilizables.
+- Buen uso de localstorage, use effect y usestate.
+- Buen uso de la logica de localstorage dentro de una carpeta service.
+
+
+
+Observaciones:
+- No pude probarlo. Tienen un bug en el agregar peliculas que no deja agregar nada, asi que no pude testear ninguna funcionalidad.
+- Borren logs y codigo comentado antes de la entrega.
+- Tienen que nombrar a los archivos de css de cada componente si o si con nombreComponente.module.css, si no lo hacen
+se comporta como si fuera un estilo global y no del componente, les puede dar muchisimos dolores de cabeza y bugs.
+- Todos los componentes y pages deberian estar dentro de la carpeta /src y no fuera de esa
+
+Nota: 8
+
 # Trabajo Práctico: REACT
 
 ## integrantes: 
