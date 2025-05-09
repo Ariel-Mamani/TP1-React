@@ -1,4 +1,4 @@
-import peliculasModule from './peliculas.module.css';
+import peliculasModule from './peliculas.module.css'; //styles se acopla mas al standard de este import.
 import Input from '../../components/Input/Input.jsx';
 import Card from '../../components/Card/Card.jsx';
 import Formulario from '../../components/Formulario/Formulario.jsx';

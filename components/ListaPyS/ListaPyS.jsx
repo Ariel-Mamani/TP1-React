@@ -1,5 +1,5 @@
 import React from "react";
-import './Style.css';
+import './Style.css'; //Este archivo deberia llamarse ListaPyS.module.css
 import '../../services/localStorage.js';
 import Formulario from '../../components/Formulario/Formulario.jsx';
 import { useState, useEffect  } from 'react';
@@ -13,6 +13,7 @@ function ListaPyS() {
 
         useEffect(() => {
             const guardado = JSON.parse(localStorage.getItem('peliculas')) || [];
+            //Tienen un bug aca o en la siguiente linea que les marco que no me deja guardar peliculas
             setPeliculas(Object.values(guardado));
     }, []);
     const peliculaPorVer = peliculas.filter(pelicula => pelicula.visto === false);
@@ -22,6 +23,7 @@ function ListaPyS() {
     const agregarPelicula = pelicula => {
         if(pelicula.titulo.trim()){ 
             // busco las peliculas previas
+            //Tambien puede ser aca
             const peliculasPrevias = Object.values(JSON.parse(localStorage.getItem('peliculas'))) || [];
             const peliculasActualizadas = [pelicula, ...peliculasPrevias];
             setPeliculas(peliculasActualizadas);
@@ -42,6 +44,7 @@ function ListaPyS() {
         if (pelicula) {
             setPeliculaAEditar(pelicula);
             setMostrarModalEdicion(true); // abrir el modal
+            //Borren logs y comentarios innecesarios antes de la entrega
             console.log("AAAAAACAAAA");   // PROBANDO
         }
     };
